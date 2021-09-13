@@ -6,7 +6,7 @@ import {
   PerspectiveCamera,
   Scene,
   WebGLRenderer,
-} from 'three';
+} from 'https://cdn.skypack.dev/three@0.132.2';
 
 // Get a reference to the container element that will hold our scene
 const container = document.querySelector('#scene-container');
@@ -55,4 +55,3 @@ container.append(renderer.domElement);
 
 // render, or 'create a still image', of the scene
 renderer.render(scene, camera);
-
