@@ -27,7 +27,8 @@ const camera = new PerspectiveCamera(fov, aspect, near, far);
 
 // every object is initially created at ( 0, 0, 0 )
 // move the camera back so we can view the scene
-camera.position.set(0, 0, 10);
+camera.position.set(0, 0, 11);
+camera.rotation.set(0, 0, 3)
 
 // create a geometry
 const geometry = new BoxBufferGeometry(2, 2, 2);
