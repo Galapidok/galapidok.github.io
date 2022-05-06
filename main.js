@@ -66,12 +66,15 @@ class BasicWorldDemo {
         './resources/posz.jpg',
         './resources/negz.jpg',
     ]);
+    
+    const brickTexture = loader.load('./resources/download (2).jpeg');
+    
     this._scene.background = texture;
 
     const plane = new THREE.Mesh(
         new THREE.PlaneGeometry(100, 100, 10, 10),
         new THREE.MeshStandardMaterial({
-            color: 0xFFFFFF,
+            color: 0xFFFFFF, map:brickTexture
           }));
     plane.castShadow = false;
     plane.receiveShadow = true;
