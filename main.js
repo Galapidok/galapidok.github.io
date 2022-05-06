@@ -49,7 +49,7 @@ class BasicWorldDemo {
     light.shadow.camera.bottom = -100;
     this._scene.add(light);
 
-    light = new THREE.AmbientLight(0x101010);
+    light = new THREE.AmbientLight(0x20131f);
     this._scene.add(light);
 
     const controls = new OrbitControls(
