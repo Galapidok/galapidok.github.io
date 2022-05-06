@@ -67,14 +67,14 @@ class BasicWorldDemo {
         './resources/negz.jpg',
     ]);
     
-    const brickTexture = loader.load('./resources/download (2).jpeg');
+    //const brickTexture = loader.load('./resources/download (2).jpeg');
     
     this._scene.background = texture;
 
     const plane = new THREE.Mesh(
         new THREE.PlaneGeometry(100, 100, 10, 10),
         new THREE.MeshStandardMaterial({
-            color: 0xFFFFFF, map:brickTexture
+            color: 0xF11FFF, 
           }));
     plane.castShadow = false;
     plane.receiveShadow = true;
@@ -94,11 +94,11 @@ class BasicWorldDemo {
     for (let x = -8; x < 8; x++) {
       for (let y = -8; y < 8; y++) {
         const box = new THREE.Mesh(
-          new THREE.BoxGeometry(2, 2, 2),
+          new THREE.BoxGeometry(21, 22, 21),
           new THREE.MeshStandardMaterial({
-              color: 0x808080,
+              color: 0x8ff030,
           }));
-        box.position.set(Math.random() + x * 5, Math.random() * 4.0 + 2.0, Math.random() + y * 5);
+        box.position.set(Math.random() + x * 15, Math.random() * 4.0 + 2.0, Math.random() + y * 15);
         box.castShadow = true;
         box.receiveShadow = true;
         this._scene.add(box);
