@@ -24,7 +24,7 @@ class BasicWorldDemo {
     }, false);
 
     const fov = 60;
-    const aspect = 1920 / 1080;
+    const aspect = 4096 / 2160;
     const near = 1.0;
     const far = 1000.0;
     this._camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
