@@ -128,7 +128,7 @@ class BasicWorldDemo {
 
   _RAF() {
     requestAnimationFrame(() => {
-      this._camera.rotation.x+=1;
+      this._camera.rotation.x+=0.1;
       this._threejs.render(this._scene, this._camera);
       this._RAF();
     });
