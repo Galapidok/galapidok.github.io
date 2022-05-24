@@ -91,8 +91,8 @@ class BasicWorldDemo {
     box.receiveShadow = true;
     this._scene.add(box);
 
-    for (let x = -8; x < 8; x++) {
-      for (let y = -8; y < 8; y++) {
+    for (let x = -64; x < 64; x++) {
+      for (let y = -64; y < 64; y++) {
         const box = new THREE.Mesh(
           new THREE.BoxGeometry(21, 22, 21),
           new THREE.MeshStandardMaterial({
