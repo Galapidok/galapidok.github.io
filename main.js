@@ -22,6 +22,14 @@ class BasicWorldDemo {
     window.addEventListener('resize', () => {
       this._OnWindowResize();
     }, false);
+    
+   window.addEventListener("keydown", event => {
+      if (event.keyCode == '38') {
+        light = new THREE.AmbientLight(0xffffff);
+        this._scene.add(light);
+        
+       
+  }});
 
     const fov = 60;
     const aspect = 4096 / 2160;
@@ -91,8 +99,8 @@ class BasicWorldDemo {
     box.receiveShadow = true;
     this._scene.add(box);
 
-    for (let x = -64; x < 64; x++) {
-      for (let y = -64; y < 64; y++) {
+    for (let x = -32; x < 32; x++) {
+      for (let y = -32; y < 32; y++) {
         const box = new THREE.Mesh(
           new THREE.BoxGeometry(21, 22, 21),
           new THREE.MeshStandardMaterial({
