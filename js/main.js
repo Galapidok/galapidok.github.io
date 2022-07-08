@@ -25,7 +25,7 @@ function init() {
     scene = new THREE.Scene();
     camera.lookAt( scene.position );
 
-    var geometry = new THREE.BoxBufferGeometry( 0.2, 0.2, 0.2 );
+    var geometry = new THREE.BoxBufferGeometry( 0.05, 0.05, 0.05 );
     var material = new THREE.MeshNormalMaterial();
 
     mesh = new THREE.Mesh( geometry, material );
