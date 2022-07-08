@@ -26,9 +26,16 @@ function init() {
     camera.lookAt( scene.position );
 
     var geometry = new THREE.BoxBufferGeometry( 0.1, 0.1, 0.1 );
+
+    var planeGeometry = new THREE.BoxBufferGeometry( 20, 20, 0.1 )
+
     var material = new THREE.MeshNormalMaterial();
 
     mesh = new THREE.Mesh( geometry, material );
+
+    planeMesh = new THREE.Mesh( planeGeometry, material )
+
+    scene.add( planeMesh )
     
     goal = new THREE.Object3D;
     goal.position.z = -coronaSafetyDistance;
@@ -44,18 +51,38 @@ function init() {
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
   
-    keys = {
-        a: false,
-        s: false,
-        d: false,
-        w: false
-    };
+keys = {
+    a: false,
+    s: false,
+    d: false,
+    w: false
+  };
 
+  let button = document.querySelector('#button');
+  let log = document.querySelector('#log');
+  button.addEventListener('mouseup', logMouseButton);
 
+  function logMouseButton(e) {
+   if (typeof e === 'object') {
+      switch (e.button) {
+        case 0:
+          log.textContent = 'Left button clicked.';
+         break;
+        case 1:
+          log.textContent = 'Middle button clicked.';
+          break;
+        case 2:
+          log.textContent = 'Right button clicked.';
+          break;
+        default:
+          log.textContent = `Unknown button code: ${e.button}`;
+    }
+  }
+}
 
-   document.body.addEventListener( 'keydown', function(e) {
+  document.body.addEventListener( 'keydown', function(e) {
     
-   var key = e.code.replace('Key', '').toLowerCase();
+    var key = e.code.replace('Key', '').toLowerCase();
     if ( keys[ key ] !== undefined )
       keys[ key ] = true;
     
