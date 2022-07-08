@@ -27,15 +27,15 @@ function init() {
 
     var geometry = new THREE.BoxBufferGeometry( 0.1, 0.1, 0.1 );
 
-    var planeGeometry = new THREE.BoxBufferGeometry( 20, 20, 0.1 );
+    
 
     var material = new THREE.MeshNormalMaterial();
 
     mesh = new THREE.Mesh( geometry, material );
 
-    var planeMesh = new THREE.Mesh( planeGeometry, material );
+   
 
-    scene.add( planeMesh );
+
     goal = new THREE.Object3D;
     goal.position.z = -coronaSafetyDistance;
     goal.add( camera );
