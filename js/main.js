@@ -84,7 +84,7 @@ function animate() {
 
   if ( keys.a )
     mesh.rotateY(1);
-    speed = 0.03
+    speed = 0.03;
   else if ( keys.d )
     mesh.rotateY(-1);
     
