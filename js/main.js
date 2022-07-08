@@ -49,7 +49,7 @@ function init() {
 
    // load a sound and set it as the Audio object's buffer
     const audioLoader = new THREE.AudioLoader();
-    audioLoader.load( 'sounds/ambient.ogg', function( buffer ) {
+    audioLoader.load( '../resources/pogg.mp3', function( buffer ) {
 	sound.setBuffer( buffer );
 	sound.setLoop( true );
 	sound.setVolume( 0.5 );
