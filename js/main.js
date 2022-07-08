@@ -83,12 +83,10 @@ function animate() {
   mesh.translateZ( velocity );
 
   if ( keys.a )
-    mesh.rotateY(1);
-    speed = 0.03;
-
-    
-  velocity += ( speed - velocity ) * .3;
-  mesh.translateZ( velocity );
+    mesh.rotateY(0.05);
+  else if ( keys.d )
+    mesh.rotateY(-0.05);
+		
   
   a.lerp(mesh.position, 0.4);
   b.copy(goal.position);
