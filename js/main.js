@@ -33,10 +33,9 @@ function init() {
 
     mesh = new THREE.Mesh( geometry, material );
 
-    planeMesh = new THREE.Mesh( planeGeometry, material )
+    var planeMesh = new THREE.Mesh( planeGeometry, material );
 
-    scene.add( planeMesh )
-    
+    scene.add( planeMesh );
     goal = new THREE.Object3D;
     goal.position.z = -coronaSafetyDistance;
     goal.add( camera );
