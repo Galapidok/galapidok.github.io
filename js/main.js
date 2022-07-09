@@ -93,8 +93,8 @@ function animate() {
     mesh.rotateY(-0.05);
 
 	
-  if (keys.space)
-    gravitas += -(prevGravitas^2) + 4;
+  
+  gravitas += -((prevGravitas-4)^2) + 4;
   mesh.translateY(gravitas);
   
   a.lerp(mesh.position, 0.4);
