@@ -97,7 +97,7 @@ function animate() {
 	
   
   gravitas += -time^2
-  mesh.translateY(gravitas/1000);
+  mesh.translateY(gravitas);
   
   a.lerp(mesh.position, 0.4);
   b.copy(goal.position);
