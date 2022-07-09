@@ -14,8 +14,8 @@ var b = new THREE.Vector3;
 var coronaSafetyDistance = 0.3;
 var velocity = 0.0;
 var speed = 0.0;
-var gravitas = 0.00;
-var prevGravitas = gravitas;
+var gravitas = 0.1;
+var prevGravitas = 0.00;
 
 init();
 animate();
