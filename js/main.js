@@ -110,5 +110,6 @@ function animate() {
     
     renderer.render( scene, camera );
   prevGravitas = gravitas;
+  console.log( gravitas );
 
 }
