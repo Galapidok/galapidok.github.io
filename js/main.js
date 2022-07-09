@@ -75,7 +75,7 @@ function animate() {
     
   speed = 0.0;
   
-  if ( keys.w )
+  if ( keys.w ) {
     speed = 0.05;
     const listener = new THREE.AudioListener();
     camera.add( listener );
@@ -91,8 +91,10 @@ function animate() {
 	sound.setVolume( 0.5 );
 	sound.play();
     });
-  else if ( keys.s )
+  };
+  else if ( keys.s ) {
     speed = -0.01;
+  };
 
   velocity += ( speed - velocity ) * .3;
   mesh.translateZ( velocity );
