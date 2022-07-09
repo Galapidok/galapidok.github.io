@@ -32,7 +32,6 @@ function init() {
     mesh = new THREE.Mesh( geometry, material );
     
     goal = new THREE.Object3D;
-    follow = new THREE.Object3D;
     goal.position.z = -coronaSafetyDistance;
     goal.add( camera );
     scene.add( mesh );
