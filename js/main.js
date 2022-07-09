@@ -71,11 +71,13 @@ keys = {
   });
 
 }
-
+var time = 0;
 
 function animate() {
 
     requestAnimationFrame( animate );
+
+  time += 0.001;
     
   speed = 0.0;
   
@@ -94,7 +96,7 @@ function animate() {
 
 	
   
-  gravitas += -prevGravitas^2
+  gravitas += -time^2
   mesh.translateY(gravitas/1000);
   
   a.lerp(mesh.position, 0.4);
