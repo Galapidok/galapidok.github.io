@@ -14,6 +14,8 @@ var b = new THREE.Vector3;
 var coronaSafetyDistance = 0.3;
 var velocity = 0.0;
 var speed = 0.0;
+var gravitas = 0.00;
+var lastGrav = gravitas;
 
 init();
 animate();
@@ -89,7 +91,11 @@ function animate() {
     mesh.rotateY(0.05);
   else if ( keys.d )
     mesh.rotateY(-0.05);
-		
+
+	
+  if (keys.space)
+    gravitas += -(prevGravitas^2) + 4;
+  mesh.translateY(gravitas);
   
   a.lerp(mesh.position, 0.4);
   b.copy(goal.position);
@@ -103,5 +109,6 @@ function animate() {
     camera.lookAt( mesh.position );
     
     renderer.render( scene, camera );
+  prevGravitas = gravitas;
 
 }
