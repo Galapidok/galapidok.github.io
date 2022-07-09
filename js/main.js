@@ -79,7 +79,7 @@ function animate() {
   speed = 0.0;
   
   if ( keys.w )
-    speed = 0.01;
+    speed = 0.04;
   else if ( keys.s )
     speed = -0.01;
 
