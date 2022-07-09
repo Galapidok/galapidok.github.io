@@ -15,7 +15,7 @@ var coronaSafetyDistance = 0.3;
 var velocity = 0.0;
 var speed = 0.0;
 var gravitas = 0.00;
-var lastGrav = gravitas;
+var prevGravitas = gravitas;
 
 init();
 animate();
