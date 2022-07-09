@@ -96,7 +96,7 @@ function animate() {
 
 	
   
-  gravitas += -time^2 - prevGravitas -2;
+  gravitas += -time^2 - prevGravitas^-2 -2;
   mesh.translateY(gravitas);
   
   a.lerp(mesh.position, 0.4);
