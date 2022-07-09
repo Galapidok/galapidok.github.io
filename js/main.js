@@ -1,3 +1,4 @@
+// author: Fyrestar <info@mevedia.com>
 var camera, scene, renderer, mesh, goal, keys;
 
 var time = 0;
@@ -25,26 +26,23 @@ function init() {
     scene = new THREE.Scene();
     camera.lookAt( scene.position );
 
-    var geometry = new THREE.BoxBufferGeometry( 0.1, 0.1, 0.1 );
-
-    
-
+    var geometry = new THREE.BoxBufferGeometry( 0.2, 0.2, 0.2 );
     var material = new THREE.MeshNormalMaterial();
 
     mesh = new THREE.Mesh( geometry, material );
-
-   
-
-
+    
     goal = new THREE.Object3D;
+    follow = new THREE.Object3D;
     goal.position.z = -coronaSafetyDistance;
     goal.add( camera );
     scene.add( mesh );
  
+
     
-    
-    var gridHelper = new THREE.GridHelper( 240, 240 );
+    var gridHelper = new THREE.GridHelper( 40, 40 );
     scene.add( gridHelper );
+    
+    scene.add( new THREE.AxesHelper() );
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -56,8 +54,13 @@ keys = {
     d: false,
     w: false
   };
-	
-
+  document.body.addEventListener( 'keydown', function(e) {
+    
+    var key = e.code.replace('Key', '').toLowerCase();
+    if ( keys[ key ] !== undefined )
+      keys[ key ] = true;
+    
+  });
   document.body.addEventListener( 'keyup', function(e) {
     
     var key = e.code.replace('Key', '').toLowerCase();
@@ -75,26 +78,10 @@ function animate() {
     
   speed = 0.0;
   
-  if ( keys.w ) {
-    speed = 0.05;
-    const listener = new THREE.AudioListener();
-    camera.add( listener );
-
-   // create a global audio source
-    const sound = new THREE.Audio( listener );
-
-   // load a sound and set it as the Audio object's buffer
-    const audioLoader = new THREE.AudioLoader();
-    audioLoader.load( '../resources/pogg.mp3', function( buffer ) {
-	sound.setBuffer( buffer );
-	sound.setLoop( true );
-	sound.setVolume( 0.5 );
-	sound.play();
-    });
-  };
-  else if ( keys.s ) {
+  if ( keys.w )
+    speed = 0.01;
+  else if ( keys.s )
     speed = -0.01;
-  };
 
   velocity += ( speed - velocity ) * .3;
   mesh.translateZ( velocity );
