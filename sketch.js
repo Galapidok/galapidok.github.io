@@ -8,7 +8,7 @@ let centerZ = 0;
 
 
 function setup() {
-  createCanvas(400, 400, WEBGL);
+  createCanvas(window.innerHeight, window.innerWidth, WEBGL);
   camera();
   noStroke();
 }
@@ -27,4 +27,11 @@ function draw() {
   sphere(20,15,15);
   
   
+}
+
+window.onresize = function() {
+  // assigns new values for width and height variables
+  w = window.innerWidth;
+  h = window.innerHeight;  
+  canvas.size(w,h);
 }
